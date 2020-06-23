@@ -3,7 +3,7 @@
 Bare bones implementation of:
 
 * a Flask app
-* talking to a database
+* talking to a database (Postgres)
 * Dockerized
 
 ## how to run?
@@ -36,8 +36,13 @@ make flask
 
 ## FYI
 
-* I have another project that focuses on [just Docker and Flask, no database](https://github.com/zachvalenta/docker-flask-skeleton).
-* Here are the Docker versions I'm working with:
+I have a few other projects like this:
+
+* [Docker + Flask](https://github.com/zachvalenta/docker-flask)
+* [Docker + Flask + SQLite](https://github.com/zachvalenta/docker-flask-sqlite)
+* [Docker + Flask + SQLite + gunicorn](https://github.com/zachvalenta/docker-flask-sqlite-gunicorn)
+
+Here are the Docker versions I'm working with:
 
 ```sh
 $ docker --version  # Docker version 18.09.2, build 6247962
