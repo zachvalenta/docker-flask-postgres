@@ -13,6 +13,7 @@ help:
 	@echo "start:       start container"
 	@echo "stop:        stop container"
 	@echo "restart:     restart container"
+	@echo "up:          build and start multiple containers"
 	@echo
 	@echo "📡 API"
 	@echo
@@ -37,6 +38,9 @@ flask:
 #
 # 🚢 DOCKER
 #
+
+up:
+	docker-compose up --build
 
 image:
 	docker build -t $(name) .
