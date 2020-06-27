@@ -9,7 +9,10 @@ CONFIG
 
 # app - init, config for Postgres
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:postgres@db:5432/postgres"
+user = os.getenv("DB_USER")
+pw = os.getenv("DB_PW")
+name = os.getenv("DB_NAME")
+app.config["SQLALCHEMY_DATABASE_URI"] = f"postgresql://{user}:{pw}@db:5432/{name}"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 # db - init, declare model, create tables on app start
