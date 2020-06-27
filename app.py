@@ -7,14 +7,9 @@ from flask_sqlalchemy import SQLAlchemy
 CONFIG
 """
 
-# db - construct path to SQLite file
-basedir = os.path.abspath(os.path.dirname(__file__))
-db_path = os.path.join(basedir, os.getenv("SQLITE_FILE"))
-db_uri = "sqlite:///" + db_path
-
-# app - init, config
+# app - init, config for Postgres
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:postgres@db:5432/postgres"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 # db - init, declare model, create tables on app start
