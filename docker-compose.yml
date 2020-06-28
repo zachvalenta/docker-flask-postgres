@@ -13,9 +13,9 @@ services:
   db:
     image: "postgres:11"
     environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=zjv_db
+      - POSTGRES_USER=zjv_user
+      - POSTGRES_PASSWORD=zjv_pw
     ports:
       - 5432:5432
     volumes:
