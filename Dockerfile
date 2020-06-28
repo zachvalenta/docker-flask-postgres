@@ -1,4 +1,5 @@
-FROM python:3-alpine
+FROM python:3.6-slim
+RUN pip install psycopg2-binary
 LABEL maintainer Zach Valenta
 COPY . /docker-flask-postgres
 WORKDIR /docker-flask-postgres
