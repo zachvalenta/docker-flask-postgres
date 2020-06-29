@@ -1,7 +1,6 @@
 FROM python:3.6-slim
 LABEL maintainer Zach Valenta
 ENV PYTHONDONTWRITEBYTECODE 1
-RUN pip install psycopg2-binary
 COPY . /docker-flask-postgres
 WORKDIR /docker-flask-postgres
 RUN python -m pip install -r requirements.txt
