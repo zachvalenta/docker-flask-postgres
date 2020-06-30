@@ -1,19 +1,12 @@
 .PHONY: test
-name = "docker-flask-postgres"
 
 help:
 	@echo
-	@echo "🍶 FLASK"
-	@echo
-	@echo "flask:       start app"
-	@echo
 	@echo "🚢 DOCKER"
 	@echo
-	@echo "image:       build image"
-	@echo "start:       start container"
-	@echo "stop:        stop container"
-	@echo "restart:     restart container"
-	@echo "up:          build and start multiple containers"
+	@echo "up:          build images, start containers"
+	@echo "clean:       stop containers, rm all containers/images/volumes"
+	@echo "list:        list all containers/images/volumes"
 	@echo
 	@echo "📡 API"
 	@echo
@@ -29,30 +22,17 @@ help:
 	@echo
 
 #
-# 🍶 FLASK
-#
-
-flask:
-	poetry run flask run
-
-#
 # 🚢 DOCKER
 #
 
 up:
 	docker-compose up --build
 
-image:
-	docker build -t $(name) .
+clean:
+	docker ps -qa | xargs docker stop; docker system prune --volumes -f; docker image prune -af
 
-start:
-	docker run --name $(name) -p 5000:5000 $(name)
-
-stop:
-	docker stop $(name); docker ps -a
-
-restart:
-	docker restart $(name); docker ps
+list:
+	docker ps -a; docker images; docker volume ls
 
 #
 # 📡 API
@@ -67,12 +47,12 @@ get:
 post:
 	http POST http://localhost:5000/post-thing name=my_new_thing
 
-export:
-	poetry export -f requirements.txt > requirements.txt
-
 #
 # 📦 DEPENDENCIES
 #
+
+export:
+	poetry export -f requirements.txt > requirements.txt
 
 env:
 	poetry env info

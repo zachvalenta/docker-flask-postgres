@@ -8,30 +8,21 @@ Bare bones implementation of:
 
 ## how to run?
 
-To run as a container, have DockerCE installed and use the `Makefile`:
-
 ```sh
-# create image
-make image
-
-# run container using image
-make start
+# build images, start containers
+make up
 
 # hit healthcheck endpoint
 make hc
 
-# stop container
-make stop
-```
+# create record
+make post
 
-You can also work with the app locally (outside of a container, on your own operating system):
+# get all records
+make get
 
-```sh
-# install deps
-poetry install
-
-# start server
-make flask
+# clean up all containers/images/volumes
+make clean
 ```
 
 ## FYI
