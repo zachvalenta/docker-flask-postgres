@@ -1,5 +1,7 @@
 .PHONY: test
 
+host = "http://localhost:5000"
+
 help:
 	@echo
 	@echo "🚢 DOCKER"
@@ -39,13 +41,13 @@ list:
 #
 
 hc:
-	http http://localhost:5000/healthcheck
+	http $(host)/healthcheck
 
 get:
-	http http://localhost:5000/get-things
+	http $(host)/get-things
 
 post:
-	http POST http://localhost:5000/post-thing name=my_new_thing
+	http POST $(host)/post-thing name=my_new_thing
 
 #
 # 📦 DEPENDENCIES
