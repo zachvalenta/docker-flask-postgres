@@ -7,8 +7,8 @@ help:
 	@echo "🚢 DOCKER"
 	@echo
 	@echo "up:          build images, start containers"
-	@echo "clean:       stop containers, rm all containers/images/volumes"
 	@echo "list:        list all containers/images/volumes"
+	@echo "clean:       stop containers, rm all containers/images/volumes"
 	@echo
 	@echo "📡 API"
 	@echo
@@ -30,11 +30,11 @@ help:
 up:
 	docker-compose up --build
 
-clean:
-	docker ps -qa | xargs docker stop; docker system prune --volumes -f; docker image prune -af
-
 list:
 	docker ps -a; docker images; docker volume ls
+
+clean:
+	docker ps -qa | xargs docker stop; docker system prune --volumes -f; docker image prune -af
 
 #
 # 📡 API
