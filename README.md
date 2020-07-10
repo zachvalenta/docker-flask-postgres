@@ -32,6 +32,7 @@ I have a few other projects like this:
 * [Docker + Flask](https://github.com/zachvalenta/docker-flask)
 * [Docker + Flask + SQLite](https://github.com/zachvalenta/docker-flask-sqlite)
 * [Docker + Flask + SQLite + gunicorn](https://github.com/zachvalenta/docker-flask-sqlite-gunicorn)
+* [Docker + Flask + configuration management](https://github.com/zachvalenta/docker-flask-envs-secrets)
 
 Here are the Docker versions I'm working with:
 
